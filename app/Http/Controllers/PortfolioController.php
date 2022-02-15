@@ -41,6 +41,9 @@ class PortfolioController extends Controller
         $portfolio_data->title             = $request->title;
         $portfolio_data->short_description = $request->short_description;
         $portfolio_data->description       = $request->description;
+        $portfolio_data->project_url       = $request->project_url;
+        $portfolio_data->user_name         = $request->user_name;
+        $portfolio_data->password          = $request->password;
         $portfolio_data->image             = $image;
         $portfolio_data->is_active         = 1;
         $portfolio_data->created_by        = Auth::user()->id;
@@ -81,6 +84,9 @@ class PortfolioController extends Controller
         $portfolio_data->title             = $request->title;
         $portfolio_data->short_description = $request->short_description;
         $portfolio_data->description       = $request->description;
+        $portfolio_data->project_url       = $request->project_url;
+        $portfolio_data->user_name         = $request->user_name;
+        $portfolio_data->password          = $request->password;
         $portfolio_data->image             = $image;
         $portfolio_data->is_active         = 1;
         $portfolio_data->updated_by        = Auth::user()->id;
@@ -107,8 +113,15 @@ class PortfolioController extends Controller
     }
 
     // API data send function 
-     public function portfolio(){
+    public function portfolio(){
         $portfolio_info =  Portfolio::all();
+        return response()->json([
+            'status'=> 200,
+            "data"  => $portfolio_info,
+        ]);
+    }
+    public function portfolio_info($id){
+        $portfolio_info =  Portfolio::find($id);
         return response()->json([
             'status'=> 200,
             "data"  => $portfolio_info,

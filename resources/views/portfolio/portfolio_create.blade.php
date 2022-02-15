@@ -39,15 +39,30 @@
                     <div class="form-group row">
                         <label for="description" class="col-md-2 col-form-label text-md-left"> Description </label>
                         <div class="col-md-10">
-                            <textarea name="description"  id="description" rows="5" class="form-control" placeholder="Description" required>  </textarea>
+                            <textarea name="description"  id="description" rows="4" class="form-control" placeholder="Description" required>  </textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="image" class="col-md-2 col-form-label text-md-left"> Image </label>
+                        <label for="image" class="col-md-2 col-form-label text-md-left">Project URL </label>
                         <div class="col-md-4">
+                            <input type="text"  name="project_url"  id="project_url" class="form-control" placeholder="Project URL"  />
+                        </div>
+                        <label for="user_name" class="col-md-2 col-form-label text-md-left"> User Name </label>
+                        <div class="col-md-4">
+                            <input type="text"  name="user_name"  id="user_name" class="form-control"  placeholder="User Name" />
+                        </div>
+                       
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-md-2 col-form-label text-md-left">Password </label>
+                        <div class="col-md-4">
+                            <input type="text"  name="password"  id="password" class="form-control" placeholder="Password" />
+                        </div>
+                        <label for="image" class="col-md-2 col-form-label text-md-left"> Image </label>
+                        <div class="col-md-2">
                             <input type="file"  name="image"  id="portfolioImg" class="form-control"  />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-2">
                             <img id="imgPreview" src="" style="width: 100%; height: 100px;">
                         </div>
                     </div>

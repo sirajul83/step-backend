@@ -17,6 +17,7 @@ Route::get('/service-heading', [WebContentController::class, "serviceHeading"]);
 
 // portfolio
 Route::get('/portfolio', [PortfolioController::class, "portfolio"]);
+Route::get('/portfolio/{id}', [PortfolioController::class, "portfolio_info"]);
 Route::get('/portfolio-heading', [WebContentController::class, "portfolioHeading"]);
 
 // team
