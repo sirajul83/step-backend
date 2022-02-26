@@ -22,7 +22,6 @@ class ServiceController extends Controller
         return view("service.service_create");
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
@@ -34,6 +33,7 @@ class ServiceController extends Controller
         $service_data->title       = $request->title;
         $service_data->icon        = $request->icon;
         $service_data->description = $request->description;
+        $service_data->position    = $request->position;
         $service_data->is_active   = 1;
         $service_data->created_by  = Auth::user()->id;
         $service_data->created_ip  = request()->ip();
@@ -65,6 +65,7 @@ class ServiceController extends Controller
         $service_data->title       = $request->title;
         $service_data->icon        = $request->icon;
         $service_data->description = $request->description;
+        $service_data->position    = $request->position;
         $service_data->is_active   = 1;
         $service_data->updated_by  = Auth::user()->id;
         $service_data->updated_ip  = request()->ip();
@@ -92,12 +93,19 @@ class ServiceController extends Controller
 
     // API data send function 
     public function service(){
-        $service_info =  Service::all();
+        $service_info =  Service::orderBy('position', 'ASC')->get();
         return response()->json([
             'status'=> 200,
             "data"  => $service_info,
         ]);
        // return response()->json([$service_info]);
        // return \Response::json($service_info, 200);
+    }
+    public function service_info($id){
+        $service_info =  Service::find($id);
+        return response()->json([
+            'status'=> 200,
+            "data"  => $service_info,
+        ]);
     }
 }

@@ -42,6 +42,7 @@
             <td>
               <img src="{{ asset('public/assets/images')}}/{{$item->image}}" style="width: 150PX; height: 80px;">
             </td>
+            <td><span class="badge badge-secondary">{{!empty($item->position) ? $item->position : 0 }}</span> </td>
             <td class="project-actions text-right">
               <a class="btn btn-info btn-sm" href="{{ route('portfolio.edit', $item->id )}}">
                   <i class="fas fa-pencil-alt"></i>

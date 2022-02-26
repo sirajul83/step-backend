@@ -57,6 +57,12 @@
                             <img id="imgPreview" src="" style="width: 100%; height: 60px;">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label text-md-left"> Position </label>
+                        <div class="col-md-1">
+                           <input type="text"  name="position"  id="position" class="form-control" placeholder="0"  />
+                        </div>
+                    </div>
                    
                     <div class="form-group row mb-0">
                         <div  class="col-md-2"></div>

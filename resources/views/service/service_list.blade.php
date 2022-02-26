@@ -27,6 +27,7 @@
             <th> Title  </th>
             <th> Icon   </th>
             <th> Description  </th>
+            <th> Position  </th>
             <th> Action </th>
           </tr>
           </thead>
@@ -38,6 +39,7 @@
             <td>{{$item->title}}</td>
             <td>{{$item->icon}}</td>
             <td>{{$item->description}}</td>
+            <td><span class="badge badge-secondary">{{!empty($item->position) ? $item->position : 0 }}</span> </td>
             <td class="project-actions text-right">
               <a class="btn btn-info btn-sm" href="{{ route('service.edit', $item->id )}}">
                   <i class="fas fa-pencil-alt"></i>

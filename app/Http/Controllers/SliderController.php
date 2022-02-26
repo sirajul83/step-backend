@@ -58,6 +58,7 @@ class SliderController extends Controller
         $slider_data->short_title = $request->short_title;
         $slider_data->title       = $request->title;
         $slider_data->description = $request->description;
+        $slider_data->position    = $request->position;
         $slider_data->image       = $image;
         $slider_data->is_active   = 1;
         $slider_data->created_by  = Auth::user()->id;
@@ -123,6 +124,7 @@ class SliderController extends Controller
         $slider_data->short_title = $request->short_title;
         $slider_data->title       = $request->title;
         $slider_data->description = $request->description;
+        $slider_data->position    = $request->position;
         $slider_data->image       = $image;
         $slider_data->is_active   = 1;
         $slider_data->created_by  = Auth::user()->id;
@@ -156,7 +158,7 @@ class SliderController extends Controller
 
      // API data send function 
      public function slider(){
-        $slider_info =  Slider::all();
+        $slider_info =  Slider::orderBy('position', 'ASC')->get();
         return response()->json([
             'status'=> 200,
             "data"  => $slider_info,

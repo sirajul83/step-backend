@@ -48,6 +48,7 @@ class TeamController extends Controller
         $team_data->facebook    = $request->facebook;
         $team_data->twitter     = $request->twitter;
         $team_data->linkedIn    = $request->linkedIn;
+        $team_data->position    = $request->position;
         $team_data->image       = $image;
         $team_data->is_active   = 1;
         $team_data->created_by  = Auth::user()->id;
@@ -94,6 +95,7 @@ class TeamController extends Controller
         $team_data->facebook    = $request->facebook;
         $team_data->twitter     = $request->twitter;
         $team_data->linkedIn    = $request->linkedIn;
+        $team_data->position    = $request->position;
         $team_data->image       = $image;
         $team_data->is_active   = 1;
         $team_data->created_by  = Auth::user()->id;
@@ -127,7 +129,7 @@ class TeamController extends Controller
 
      // API data send function 
      public function team(){
-        $team_info =  Team::all();
+        $team_info =  Team::orderBy('position', 'ASC')->get();
         return response()->json([
             'status'=> 200,
             "data"  => $team_info,

@@ -19,14 +19,17 @@
                     @csrf
                     <div class="form-group row">
                         <label for="short_title" class="col-md-2 col-form-label text-md-left"> Short Title </label>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input id="short_title" type="text" class="form-control @error('short_title') is-invalid @enderror" name="short_title" value="{{ $slider_info->short_title }}" required autocomplete="short_title" autofocus>
-
                             @error('short_title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                        </div>
+                        <label for="title" class="col-md-1 col-form-label text-md-left"> Position </label>
+                        <div class="col-md-1">
+                            <input type="text"  name="position"  id="position" class="form-control" value="{{$slider_info->position}}" />
                         </div>
                     </div>
 

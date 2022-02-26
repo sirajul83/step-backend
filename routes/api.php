@@ -13,6 +13,7 @@ use App\Http\Controllers\ContactController;
 
 // service
 Route::get('/service', [ServiceController::class, "service"]);
+Route::get('/service/{id}', [ServiceController::class, "service_info"]);
 Route::get('/service-heading', [WebContentController::class, "serviceHeading"]);
 
 // portfolio

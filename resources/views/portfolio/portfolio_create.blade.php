@@ -19,7 +19,7 @@
                     @csrf
                     <div class="form-group row">
                         <label for="title" class="col-md-2 col-form-label text-md-left">  Title </label>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="short_title" autofocus placeholder="Title">
 
                             @error('title')
@@ -27,6 +27,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                        </div>
+                        <label for="title" class="col-md-1 col-form-label text-md-left"> Position </label>
+                        <div class="col-md-1">
+                            <input type="text"  name="position"  id="position" class="form-control"  />
                         </div>
                     </div>
 

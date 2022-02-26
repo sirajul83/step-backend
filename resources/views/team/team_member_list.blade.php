@@ -30,6 +30,7 @@
             <th> Facebook  </th>
             <th> Twitter  </th>
             <th> LinkedIN  </th>
+            <th> Position  </th>
             <th> Action </th>
           </tr>
           </thead>
@@ -46,6 +47,7 @@
             <td>{{$item->facebook}}</td>
             <td>{{$item->twitter}}</td>
             <td>{{$item->linkedIn}}</td>
+            <td><span class="badge badge-secondary">{{!empty($item->position) ? $item->position : 0 }}</span> </td>
             <td class="project-actions text-right">
               <a class="btn btn-info btn-sm" href="{{ route('team_member.edit', $item->id )}}">
                   <i class="fas fa-pencil-alt"></i>

@@ -21,7 +21,6 @@
                         <label for="name" class="col-md-2 col-form-label text-md-left"> Name </label>
                         <div class="col-md-4">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $team_info->name}}" required>
-
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -56,6 +55,12 @@
                         </div>
                         <div class="col-md-1">
                             <img id="imgPreview" src="" style="width: 100%; height: 60px;">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label text-md-left"> Position </label>
+                        <div class="col-md-1">
+                           <input type="text"  name="position"  id="position" class="form-control" value="{{ $team_info->position}}"  />
                         </div>
                     </div>
                    

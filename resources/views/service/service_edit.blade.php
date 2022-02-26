@@ -39,12 +39,18 @@
                             <textarea name="description"  id="description" rows="5" class="form-control" placeholder="Description" required> {{$service_info->description}} </textarea>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="title" class="col-md-2 col-form-label text-md-left"> Position </label>
+                        <div class="col-md-1">
+                            <input type="text"  name="position"  id="position" class="form-control" value="{{ $service_info->position}}"  />
+                        </div>
+                    </div>
                    
                     <div class="form-group row mb-0">
                         <div  class="col-md-2"></div>
                         <div class="col-md-3">
-                            <button type="submit" class="btn btn-success">
-                                Save
+                            <button type="submit" class="btn btn-info">
+                                Update
                             </button>
                         </div>
                     </div>

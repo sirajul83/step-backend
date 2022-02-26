@@ -44,6 +44,7 @@ class PortfolioController extends Controller
         $portfolio_data->project_url       = $request->project_url;
         $portfolio_data->user_name         = $request->user_name;
         $portfolio_data->password          = $request->password;
+        $portfolio_data->position          = $request->position;
         $portfolio_data->image             = $image;
         $portfolio_data->is_active         = 1;
         $portfolio_data->created_by        = Auth::user()->id;
@@ -87,6 +88,7 @@ class PortfolioController extends Controller
         $portfolio_data->project_url       = $request->project_url;
         $portfolio_data->user_name         = $request->user_name;
         $portfolio_data->password          = $request->password;
+        $portfolio_data->position          = $request->position;
         $portfolio_data->image             = $image;
         $portfolio_data->is_active         = 1;
         $portfolio_data->updated_by        = Auth::user()->id;
@@ -114,7 +116,7 @@ class PortfolioController extends Controller
 
     // API data send function 
     public function portfolio(){
-        $portfolio_info =  Portfolio::all();
+        $portfolio_info =  Portfolio::orderBy('position', 'ASC')->get();
         return response()->json([
             'status'=> 200,
             "data"  => $portfolio_info,
